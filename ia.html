@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tecnologia - DropBird</title>
+    <link rel="icon" type="image/png" href="avatar.png.jpeg">
+    <style>
+        :root {
+            --primary: #0B4F30;
+            --primary-light: #167A4A;
+            --accent: #E67E22;
+            --bg-light: #F4F8F5;
+            --text-dark: #2C3E50;
+            --white: #ffffff;
+            --shadow: 0 4px 15px rgba(0,0,0,0.06);
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, sans-serif; }
+        body { background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 30px 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .brand-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .logo-img { width: 50px; height: 50px; border-radius: 50%; background: var(--white); object-fit: cover; }
+        .logo { font-size: 32px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; }
+        .logo span { color: #4AF2A1; }
+        
+        nav { display: flex; justify-content: center; width: 100%; }
+        nav ul { list-style: none; display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        nav ul li a { 
+            color: rgba(255,255,255,0.8); 
+            text-decoration: none; 
+            font-weight: 700; 
+            font-size: 18px; 
+            transition: all 0.3s ease; 
+            padding: 8px 16px;
+            border-radius: 5px;
+        }
+        nav ul li a:hover, nav ul li a.active { color: var(--white); background: rgba(255,255,255,0.15); border-bottom: 3px solid #4AF2A1; }
+
+        .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+        .section-title { color: var(--primary); margin: 40px 0 20px; text-align: center; font-size: 30px; font-weight: 700; }
+        
+        .image-center-wrapper { display: flex; justify-content: center; margin: 40px 0; width: 100%; }
+        .page-image { width: 100%; max-width: 850px; height: auto; max-height: 450px; object-fit: cover; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+
+        .content-text { background: var(--white); padding: 40px; border-radius: 12px; box-shadow: var(--shadow); margin-bottom: 30px; text-align: justify; }
+        .content-text p { margin-bottom: 20px; font-size: 16px; color: #34495E; }
+        .content-text h3 { color: var(--primary); margin: 35px 0 15px; font-size: 22px; border-bottom: 2px solid #e2ece6; padding-bottom: 8px; }
+
+        .tech-steps { margin: 30px 0; }
+        .step-item { background: #fdfdfd; padding: 25px; border-radius: 8px; margin-bottom: 20px; border-left: 5px solid var(--primary); box-shadow: 0 2px 10px rgba(0,0,0,0.03); }
+        .step-item strong { display: block; color: var(--primary); font-size: 18px; margin-bottom: 8px; }
+        
+        .external-ref-box {
+            background: #FFFDF9;
+            border: 1px solid #F3E5D8;
+            border-left: 5px solid var(--accent);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .external-ref-box h4 { color: #B35400; margin-bottom: 8px; font-size: 16px; }
+        .link-btn { display: inline-block; font-size: 14px; color: var(--accent); font-weight: bold; text-decoration: none; margin-top: 10px; border: 1px solid var(--accent); padding: 6px 14px; border-radius: 4px; transition: all 0.3s; }
+        .link-btn:hover { background: var(--accent); color: white; }
+
+        footer { background: #1A252F; color: rgba(255,255,255,0.6); text-align: center; padding: 30px 20px; margin-top: 60px; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="brand-wrapper">
+            <img src="avatar.png.jpeg" alt="DropBird Logo" class="logo-img" onerror="this.style.display='none'">
+            <div class="logo">Drop<span>Bird</span></div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="ia.html" class="active">Tecnologia</a></li>
+                <li><a href="prototipo.html">Protótipo</a></li>
+                <li><a href="sobre.html">Quem Somos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title">Ciência de Dados e Engenharia de Dispersão</h2>
+        
+        <div class="image-center-wrapper">
+            <img src="https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&w=1000&q=80" alt="Tecnologia Aeroespacial e Drones" class="page-image">
+        </div>
+
+        <div class="content-text">
+            <p>O ecossistema operacional da DropBird foi projetado para responder a um dos maiores desafios da engenharia florestal moderna: a velocidade de recuperação de áreas severamente degradadas. Ao unificar drones pesados multicópteros a sistemas de ejeção pneumática calibrados por telemetria em tempo real, eliminamos as barreiras logísticas de solos de difícil acesso.</p>
+            
+            <h3>Arquitetura e Processamento Geospacial</h3>
+            <p>Antes de qualquer semente tocar o solo, nossas equipes processam gigabytes de informações altimétricas e de reflectância vegetativa coletadas por sensoriamento remoto de órbita baixa. Algoritmos computacionais calculam as trajetórias de vento locais e o microrelevo para predizer as zonas de deposição orgânica de máxima eficiência, garantindo estabilidade mecânica mesmo sob condições de turbulência térmica.</p>
+
+            <div class="tech-steps">
+                <div class="step-item">
+                    <strong>1. Mapeamento Multiespectral e NDVI</strong>
+                    O planejamento se inicia mapeando o terreno com sensores que mensuram o Índice de Vegetação por Diferença Normalizada (NDVI). Isso localiza com precisão cirúrgica o solo exposto e clareiras escondidas onde a regeneração natural estagnou, gerando uma malha georreferenciada de alvos biológicos.
+                    <div class="external-ref-box">
+                        <h4>Fundamentação Científica - Embrapa</h4>
+                        <p>Os conceitos de sensoriamento remoto aplicados ao diagnóstico de pastagens e solos degradados seguem os padrões de pesquisa agropecuária nacional.</p>
+                        <a href="https://www.embrapa.br/" target="_blank" class="link-btn">🔗 Estudar Sensoriamento Remoto na Embrapa</a>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <strong>2. Lançadores Pneumáticos de Alta Pressão</strong>
+                    Diferente de sistemas que apenas jogam sementes ao vento à mercê de predadores e dessecação solar, nossos drones utilizam injetores que utilizam ar comprimido purificado. Cada cápsula esférica é acelerada para romper a camada superficial endurecida do solo, fixando-se sob a profundidade ideal de germinação biológica.
+                </div>
+
+                <div class="step-item">
+                    <strong>3. Biopoupança Nutritiva e Hidrogel Retentor</strong>
+                    A física do impacto é amortecida pela integridade estrutural da própria bola biodegradável. Em seu núcleo, compostos higroscópicos expandem-se ao menor contato com o orvalho ou chuva, aprisionando moléculas de água. Isso cria um ambiente hidricamente estável, nutrindo as raízes radiciais nas primeiras semanas de desenvolvimento crítico da plântula.
+                    <div class="external-ref-box">
+                        <h4>Tecnologia de Polímeros Hidrogéis - Instituto de Química da USP</h4>
+                        <p>Pesquisas sobre hidrogéis biodegradáveis aplicados na agricultura demonstram o aumento radical da sobrevivência de sementes nativas sob estresse hídrico severo.</p>
+                        <a href="https://www.iq.usp.br/" target="_blank" class="link-btn">🔗 Ver Pesquisas de Hidrogéis na USP</a>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Rastreabilidade e Auditoria ESG</h3>
+            <p>Todo o ciclo operacional — desde o lote da semente certificada até o monitoramento quadrimestral do broto florestal — é registrado digitalmente. Os relatórios gerados servem como base empírica inquestionável para auditorias internacionais de créditos de biodiversidade e carbono de alta integridade, fornecendo às empresas parceiras um painel métrico em conformidade com as exigências dos mercados globais mais restritivos.</p>
+        </div>
+    </div>
+    <footer><p>&copy; 2026 DropBird Inc. Todos os direitos reservados.</p></footer>
+</body>
+</html>

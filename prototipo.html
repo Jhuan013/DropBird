@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protótipo - DropBird</title>
+    <link rel="icon" type="image/png" href="avatar.png.jpeg">
+    <style>
+        :root {
+            --primary: #0B4F30;
+            --primary-light: #167A4A;
+            --accent: #E67E22;
+            --bg-light: #F4F8F5;
+            --text-dark: #2C3E50;
+            --white: #ffffff;
+            --shadow: 0 4px 15px rgba(0,0,0,0.06);
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, sans-serif; }
+        body { background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 30px 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .brand-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .logo-img { width: 50px; height: 50px; border-radius: 50%; background: var(--white); object-fit: cover; }
+        .logo { font-size: 32px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; }
+        .logo span { color: #4AF2A1; }
+        
+        nav { display: flex; justify-content: center; width: 100%; }
+        nav ul { list-style: none; display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        nav ul li a { 
+            color: rgba(255,255,255,0.8); 
+            text-decoration: none; 
+            font-weight: 700; 
+            font-size: 18px; 
+            transition: all 0.3s ease; 
+            padding: 8px 16px;
+            border-radius: 5px;
+        }
+        nav ul li a:hover, nav ul li a.active { color: var(--white); background: rgba(255,255,255,0.15); border-bottom: 3px solid #4AF2A1; }
+
+        .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+        .section-title { color: var(--primary); margin: 40px 0 20px; text-align: center; font-size: 30px; font-weight: 700; }
+
+        .prototype-display {
+            background: var(--white);
+            padding: 50px 40px;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 50px;
+            margin-bottom: 40px;
+        }
+
+        /* Cenário 3D com iluminação de estúdio */
+        .stage-3d {
+            width: 320px;
+            height: 350px;
+            perspective: 1000px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(circle at 50% 30%, #ffffff 0%, #d4ebd9 100%);
+            border-radius: 16px;
+            box-shadow: inset 0 0 30px rgba(0,0,0,0.08), var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Cápsula Esférica Fotorrealista Rotativa */
+        .capsule-sphere-container {
+            width: 180px;
+            height: 180px;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: floatAndRotate 10s infinite linear;
+        }
+
+        @keyframes floatAndRotate {
+            0% { transform: translateY(0px) rotateY(0deg) rotateX(5deg); }
+            50% { transform: translateY(-8px) rotateY(180deg) rotateX(-5deg); }
+            100% { transform: translateY(0px) rotateY(360deg) rotateX(5deg); }
+        }
+
+        /* Renderização da Esfera através de múltiplas camadas de iluminação */
+        .sphere-ball {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            /* Camada 1: Cor base orgânica texturizada e sombra volumétrica própria */
+            background: radial-gradient(circle at 35% 35%, #228B22 0%, #0B4F30 55%, #052416 90%);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+        }
+
+        /* Reflexo especular para simular textura úmida/brilhante realista */
+        .sphere-ball::before {
+            content: '';
+            position: absolute;
+            top: 10%;
+            left: 15%;
+            width: 45%;
+            height: 30%;
+            background: radial-gradient(circle at 50% 35%, rgba(255,255,255,0.45) 0%, rgba(255,255,255,0) 70%);
+            border-radius: 50%;
+            transform: rotate(-20deg);
+        }
+
+        /* Sombra realista projetada no chão do estúdio */
+        .sphere-shadow {
+            width: 140px;
+            height: 18px;
+            background: radial-gradient(ellipse at center, rgba(11,79,48,0.4) 0%, rgba(0,0,0,0) 75%);
+            position: absolute;
+            bottom: 35px;
+            border-radius: 50%;
+            animation: shadowScale 10s infinite ease-in-out;
+        }
+
+        @keyframes shadowScale {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(0.85); opacity: 0.6; }
+        }
+
+        .specs-list { flex: 1; min-width: 320px; list-style: none; }
+        .specs-list li { 
+            margin-bottom: 25px; 
+            padding-left: 20px; 
+            border-left: 4px solid var(--primary);
+        }
+        .specs-list h3 { color: var(--primary); font-size: 19px; margin-bottom: 6px; }
+        .specs-list p { color: #555; font-size: 15px; text-align: justify; }
+
+        .content-text { background: var(--white); padding: 40px; border-radius: 12px; box-shadow: var(--shadow); margin-bottom: 30px; text-align: justify; }
+        .content-text p { margin-bottom: 20px; font-size: 16px; color: #34495E; }
+
+        footer { background: #1A252F; color: rgba(255,255,255,0.6); text-align: center; padding: 30px 20px; margin-top: 60px; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="brand-wrapper">
+            <img src="avatar.png.jpeg" alt="DropBird Logo" class="logo-img" onerror="this.style.display='none'">
+            <div class="logo">Drop<span>Bird</span></div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="ia.html">Tecnologia</a></li>
+                <li><a href="prototipo.html" class="active">Protótipo</a></li>
+                <li><a href="sobre.html">Quem Somos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title">Protótipo Esférico de Alta Precisão: Cápsula V2</h2>
+        
+        <div class="prototype-display">
+            <div class="stage-3d">
+                <div class="capsule-sphere-container">
+                    <div class="sphere-ball"></div>
+                </div>
+                <div class="sphere-shadow"></div>
+                <div style="font-weight: bold; color: var(--primary); font-size: 13px; margin-top: 25px; z-index: 5;">Esfera Biodegradável DropBird</div>
+            </div>
+
+            <ul class="specs-list">
+                <li>
+                    <h3>1. Geometria Esférica Isotrópica</h3>
+                    <p>O formato de bola foi adotado para anular os efeitos colaterais de ventos cruzados na queda. Independentemente da orientação no momento do disparo, o arrasto aerodinâmico é uniforme, garantindo margens de precisão milimétricas em altitudes elevadas.</p>
+                </li>
+                <li>
+                    <h3>2. Casca Protetora Fotorrealista e Orgânica</h3>
+                    <p>Composta de fibras vegetais densas compactadas mecanicamente com aglutinantes de amido de milho. Sua textura e densidade imitam sementes gigantes da própria floresta, integrando-se naturalmente ao solo sem disparar alertas predatórios na fauna local.</p>
+                </li>
+                <li>
+                    <h3>3. Distribuição de Massa Centralizada</h3>
+                    <p>A semente e a carga de hidrogel nutritivo ficam exatamente no núcleo da esfera. Isso garante que, ao impactar o chão, o rompimento ocorra de maneira radial e o gel se espalhe de forma homogênea sob a terra.</p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="content-text">
+            <h3>A Transição para o Modelo Esférico</h3>
+            <p>Os testes balísticos de campo demonstraram que formatos ogivais ou cilíndricos tradicionais sofriam desvios de rota causados por rajadas térmicas ascendentes sobre as clareiras. A adoção da cápsula em formato de bola (esfera perfeita) resolveu os problemas aerodinâmicos e melhorou o armazenamento interno de compostos higroscópicos.</p>
+            <p>Adicionalmente, a superfície externa recebeu uma vedação de cera natural de carnaúba que impede a absorção prematura de umidade do ar durante o armazenamento nos galpões operacionais, garantindo estabilidade física perfeita até o exato segundo em que o drone realiza o lançamento.</p>
+        </div>
+    </div>
+    <footer><p>&copy; 2026 DropBird Inc. Todos os direitos reservados.</p></footer>
+</body>
+</html>

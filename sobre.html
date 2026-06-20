@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quem Somos - DropBird</title>
+    <link rel="icon" type="image/png" href="avatar.png.jpeg">
+    <style>
+:root {
+    --primary: #0B4F30;
+    --primary-light: #167A4A;
+    --accent: #E67E22;
+    --bg-light: #F4F8F5;
+    --text-dark: #2C3E50;
+    --white: #ffffff;
+    --shadow: 0 4px 15px rgba(0,0,0,0.06);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, sans-serif; }
+body { background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; }
+
+header {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    color: var(--white);
+    padding: 30px 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+}
+.brand-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+.logo-img { width: 50px; height: 50px; border-radius: 50%; background: var(--white); object-fit: cover; }
+.logo { font-size: 32px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; }
+.logo span { color: #4AF2A1; }
+
+nav { display: flex; justify-content: center; width: 100%; }
+nav ul { list-style: none; display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+nav ul li a { 
+    color: rgba(255,255,255,0.8); 
+    text-decoration: none; 
+    font-weight: 700; 
+    font-size: 18px; 
+    transition: all 0.3s ease; 
+    padding: 8px 16px;
+    border-radius: 5px;
+}
+nav ul li a:hover, nav ul li a.active { color: var(--white); background: rgba(255,255,255,0.15); border-bottom: 3px solid #4AF2A1; }
+
+.container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+.section-title { color: var(--primary); margin: 40px 0 20px; text-align: center; font-size: 30px; font-weight: 700; }
+
+.image-center-wrapper { display: flex; justify-content: center; margin: 40px 0; width: 100%; }
+.page-image { width: 100%; max-width: 850px; height: auto; max-height: 450px; object-fit: cover; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+
+.content-text { background: var(--white); padding: 40px; border-radius: 12px; box-shadow: var(--shadow); margin-bottom: 40px; text-align: justify; }
+.content-text p { margin-bottom: 20px; font-size: 16px; color: #34495E; }
+.content-text h3 { color: var(--primary); margin: 25px 0 15px; font-size: 22px; }
+
+.values-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-top: 30px; }
+.value-card { background: var(--bg-light); padding: 20px; border-radius: 8px; text-align: center; border-left: 4px solid var(--accent); }
+.value-card h4 { color: var(--primary); margin-bottom: 10px; font-size: 18px; }
+.value-card p { font-size: 14px; color: #555; }
+
+footer { background: #1A252F; color: rgba(255,255,255,0.6); text-align: center; padding: 30px 20px; margin-top: 60px; font-size: 14px; }
+</style>
+</head>
+<body>
+    <header>
+        <div class="brand-wrapper">
+            <img src="avatar.png.jpeg" alt="DropBird Logo" class="logo-img" onerror="this.style.display='none'">
+            <div class="logo">Drop<span>Bird</span></div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="ia.html">Tecnologia</a></li>
+                <li><a href="prototipo.html">Protótipo</a></li>
+                <li><a href="sobre.html" class="active">Quem Somos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title">Nossa História, Visão e Compromisso de Impacto</h2>
+        <div class="image-center-wrapper">
+            <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1000&q=80" alt="Biotecnologia e Campo" class="page-image">
+        </div>
+
+        <div class="content-text">
+            <p>A DropBird nasceu da convergência de mentes inquietas e do encontro estratégico entre engenheiros aeroespaciais, biólogos especialistas em conservação vegetal e engenheiros de software focados em soluções ecológicas orientadas a metas ESG corporativas. Diante da constatação científica alarmante de que os métodos de plantio e cultivo manuais tradicionais são incapazes de alcançar a velocidade exponencial com que as matas nativas e os biomas são degradados no Brasil, decidimos desenvolver soluções de automação industrial para dar escala ao reflorestamento nacional.</p>
+            
+            <h3>Nossa Missão</h3>
+            <p>Acelerar de maneira inteligente e escalável a restauração de biomas florestais protegidos, operando onde a presença humana convencional falha, otimizando investimentos em biodiversidade e pavimentando o caminho para um mercado global transparente de créditos de carbono de altíssima qualidade biológica.</p>
+
+            <h3>Nossa Visão</h3>
+            <p>Ser a principal plataforma tecnológica de restauração florestal em larga escala das Américas até 2030, consolidando-se como referência internacional no uso ético de automação aeroespacial e de dados científicos para a regeneração climática real, auditável e duradoura.</p>
+
+            <div class="values-container">
+                <div class="value-card">
+                    <h4>Rigor Científico</h4>
+                    <p>Nossas decisões biológicas e técnicas são 100% fundamentadas em pesquisas empíricas e auditorias.</p>
+                </div>
+                <div class="value-card">
+                    <h4>Integridade ESG</h4>
+                    <p>Buscamos impacto socioambiental tangível e transparente em todas as etapas operacionais.</p>
+                </div>
+                <div class="value-card">
+                    <h4>Inovação Ética</h4>
+                    <p>Usamos automação avançada com foco restrito na proteção e resgate do patrimônio natural.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer><p>&copy; 2026 DropBird Inc. Todos os direitos reservados.</p></footer>
+</body>
+</html>

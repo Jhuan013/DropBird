@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - DropBird</title>
+    <link rel="icon" type="image/png" href="avatar.png.jpeg">
+    <style>
+:root {
+    --primary: #0B4F30;
+    --primary-light: #167A4A;
+    --accent: #E67E22;
+    --bg-light: #F4F8F5;
+    --text-dark: #2C3E50;
+    --white: #ffffff;
+    --shadow: 0 4px 15px rgba(0,0,0,0.06);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, sans-serif; }
+body { background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; }
+
+header {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    color: var(--white);
+    padding: 30px 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+}
+.brand-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+.logo-img { width: 50px; height: 50px; border-radius: 50%; background: var(--white); object-fit: cover; }
+.logo { font-size: 32px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; }
+.logo span { color: #4AF2A1; }
+
+nav { display: flex; justify-content: center; width: 100%; }
+nav ul { list-style: none; display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+nav ul li a { 
+    color: rgba(255,255,255,0.8); 
+    text-decoration: none; 
+    font-weight: 700; 
+    font-size: 18px; 
+    transition: all 0.3s ease; 
+    padding: 8px 16px;
+    border-radius: 5px;
+}
+nav ul li a:hover, nav ul li a.active { color: var(--white); background: rgba(255,255,255,0.15); border-bottom: 3px solid #4AF2A1; }
+
+.container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+.section-title { color: var(--primary); margin: 40px 0 20px; text-align: center; font-size: 28px; }
+
+.image-center-wrapper { display: flex; justify-content: center; margin: 30px 0; width: 100%; }
+.page-image { width: 100%; max-width: 800px; height: auto; max-height: 400px; object-fit: cover; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; margin-bottom: 5px; font-weight: bold; color: var(--primary); }
+.form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 16px; }
+
+.btn { display: inline-block; background: var(--accent); color: var(--white); padding: 12px 28px; text-decoration: none; font-weight: bold; border-radius: 30px; transition: background 0.3s ease; }
+.btn:hover { background: #D35400; }
+
+footer { background: #1A252F; color: rgba(255,255,255,0.6); text-align: center; padding: 30px 20px; margin-top: 60px; font-size: 14px; }
+</style>
+</head>
+<body>
+    <header>
+        <div class="brand-wrapper">
+            <img src="avatar.png.jpeg" alt="DropBird Logo" class="logo-img" onerror="this.style.display='none'">
+            <div class="logo">Drop<span>Bird</span></div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contato.html" class="active">Contato</a></li>
+                <li><a href="ia.html">Tecnologia</a></li>
+                <li><a href="prototipo.html">Protótipo</a></li>
+                <li><a href="sobre.html">Quem Somos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title">Fale Conosco</h2>
+        <div class="image-center-wrapper">
+            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=80" alt="Natureza Brasileira" class="page-image">
+        </div>
+
+        <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: var(--shadow);">
+            <form onsubmit="alert('Obrigado! Sua mensagem foi enviada com sucesso para a equipe DropBird.'); return false;">
+                <div class="form-group">
+                    <label>Seu Nome / Empresa</label>
+                    <input type="text" required placeholder="Digite seu nome ou o nome da sua empresa">
+                </div>
+                <div class="form-group">
+                    <label>E-mail Corporativo ou Pessoal</label>
+                    <input type="email" required placeholder="exemplo@dominio.com">
+                </div>
+                <div class="form-group">
+                    <label>Assunto Principal</label>
+                    <select>
+                        <option>Quero aplicar o reflorestamento na minha propriedade rural</option>
+                        <option>Parceria ESG Corporativa e Créditos de Carbono</option>
+                        <option>Investimento / Rodada de Negócios</option>
+                        <option>Outros assuntos e dúvidas gerais</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Mensagem Detalhada</label>
+                    <textarea rows="5" required placeholder="Escreva aqui os detalhes da sua proposta..."></textarea>
+                </div>
+                <button type="submit" class="btn">Enviar Formulário de Contato</button>
+            </form>
+        </div>
+    </div>
+    <footer><p>&copy; 2026 DropBird Inc. Todos os direitos reservados.</p></footer>
+</body>
+</html>

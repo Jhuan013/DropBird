@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - DropBird</title>
+    <link rel="icon" type="image/png" href="avatar.png.jpeg">
+    <style>
+:root {
+    --primary: #0B4F30;
+    --primary-light: #167A4A;
+    --accent: #E67E22;
+    --bg-light: #F4F8F5;
+    --text-dark: #2C3E50;
+    --white: #ffffff;
+    --shadow: 0 4px 15px rgba(0,0,0,0.06);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, sans-serif; }
+body { background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; }
+
+header {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    color: var(--white);
+    padding: 30px 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+}
+.brand-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+.logo-img { width: 50px; height: 50px; border-radius: 50%; background: var(--white); object-fit: cover; }
+.logo { font-size: 32px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; }
+.logo span { color: #4AF2A1; }
+
+nav { display: flex; justify-content: center; width: 100%; }
+nav ul { list-style: none; display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+nav ul li a { 
+    color: rgba(255,255,255,0.8); 
+    text-decoration: none; 
+    font-weight: 700; 
+    font-size: 18px; 
+    transition: all 0.3s ease; 
+    padding: 8px 16px;
+    border-radius: 5px;
+}
+nav ul li a:hover, nav ul li a.active { color: var(--white); background: rgba(255,255,255,0.15); border-bottom: 3px solid #4AF2A1; }
+
+.container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+.section-title { color: var(--primary); margin: 40px 0 20px; text-align: center; font-size: 28px; }
+
+.image-center-wrapper { display: flex; justify-content: center; margin: 30px 0; width: 100%; }
+.page-image { width: 100%; max-width: 800px; height: auto; max-height: 400px; object-fit: cover; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+
+.faq-box { background: var(--white); padding: 30px; border-radius: 12px; margin-bottom: 25px; box-shadow: var(--shadow); border-left: 4px solid var(--primary-light); }
+.faq-box h3 { color: var(--primary); margin-bottom: 12px; font-size: 19px; }
+.faq-box p { color: #444; font-size: 15px; margin-bottom: 15px; }
+.external-link { display: inline-block; font-size: 13px; color: var(--accent); font-weight: bold; text-decoration: none; border: 1px dashed var(--accent); padding: 4px 10px; border-radius: 4px; }
+.external-link:hover { background: var(--accent); color: white; }
+
+footer { background: #1A252F; color: rgba(255,255,255,0.6); text-align: center; padding: 30px 20px; margin-top: 60px; font-size: 14px; }
+</style>
+</head>
+<body>
+    <header>
+        <div class="brand-wrapper">
+            <img src="avatar.png.jpeg" alt="DropBird Logo" class="logo-img" onerror="this.style.display='none'">
+            <div class="logo">Drop<span>Bird</span></div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="faq.html" class="active">FAQ</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="ia.html">Tecnologia</a></li>
+                <li><a href="prototipo.html">Protótipo</a></li>
+                <li><a href="sobre.html">Quem Somos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title">Perguntas Frequentes & Validação de Mercado</h2>
+        <div class="image-center-wrapper">
+            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1000&q=80" alt="Preservação Ambiental" class="page-image">
+        </div>
+
+        <div class="faq-box">
+            <h3>Do que são feitas as cápsulas de dispersão aérea?</h3>
+            <p>Nossas cápsulas utilizam um polímero natural obtido a partir de resíduos de cana-de-açúcar e celulose reciclada. Elas são esféricas, biodegradáveis e dissolvem-se sob o efeito da chuva, virando nutrientes orgânicos adicionais para a terra.</p>
+        </div>
+
+        <div class="faq-box">
+            <h3>Como garantem que as árvores vão crescer sem cuidados manuais?</h3>
+            <p>Cada cápsula esférica contém em seu núcleo um hidrogel de retenção hídrica extrema e micronutrientes complexos essenciais. Isso garante proteção balística e biológica, elevando exponencialmente os índices de fixação da muda.</p>
+        </div>
+
+        <div class="faq-box">
+            <h3>Como a tecnologia DropBird se alinha às metas globais da ONU de combate às mudanças climáticas?</h3>
+            <p>Nossa plataforma operacional atua diretamente na Década da ONU da Restauração de Ecossistemas. A automatização do plantio acelera o sequestro de carbono atmosférico seguindo os parâmetros ecológicos das Nações Unidas.</p>
+            <a href="https://www.unep.org/pt-br" target="_blank" class="external-link">🔗 Verificar Diretrizes Globais - PNUMA / ONU</a>
+        </div>
+
+        <div class="faq-box">
+            <h3>De que forma o reflorestamento gera créditos de carbono auditáveis para as empresas parceiras?</h3>
+            <p>O monitoramento contínuo das áreas restauradas quantifica a biomassa vegetal em crescimento. Os relatórios gerados pelos drones de monitoramento seguem padrões rigorosos validados por entidades como a Verra, permitindo a emissão transparente de créditos de carbono de alta integridade.</p>
+            <a href="https://verra.org/" target="_blank" class="external-link">🔗 Consultar Padrões de Crédito de Carbono - Verra</a>
+        </div>
+
+        <div class="faq-box">
+            <h3>Como a DropBird escolhe as espécies nativas para evitar o desequilíbrio ecológico?</h3>
+            <p>Não plantamos monoculturas comerciais (como pinus ou eucalipto). Nosso foco exclusivo é a restauração de biomas originais complexos (Mata Atlântica e Cerrado), seguindo os inventários botânicos oficiais e as diretrizes científicas de órgãos ambientais governamentais.</p>
+            <a href="https://www.infraestruturameioambiente.sp.gov.br/" target="_blank" class="external-link">🔗 Ver Inventário Florestal - Secretaria de Meio Ambiente SP</a>
+        </div>
+    </div>
+    <footer><p>&copy; 2026 DropBird Inc. Todos os direitos reservados.</p></footer>
+</body>
+</html>
